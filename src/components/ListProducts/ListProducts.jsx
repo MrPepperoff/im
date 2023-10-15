@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Product from "../Product/Product";
 import styles from "./ListProducts.module.scss";
 import Cart from '../Cart/Cart';
+import { Link } from 'react-router-dom';
 
 export default function ListProducts(props){
 
@@ -25,10 +26,10 @@ export default function ListProducts(props){
     return (
         <div className={styles.ListProducts}>
 
-            <Cart 
+            {/* <Cart 
                 state={state} 
                 onAddCountProduct={props.onAddCountProduct}
-            />
+            /> */}
 
             <div className="container">
                 <div className="row mb--n30">
@@ -40,6 +41,7 @@ export default function ListProducts(props){
                     }
 
                 </div>
+                
             </div>
             
             

@@ -1,15 +1,14 @@
-
 import './App.css';
 import { useState } from 'react';
-import ListProducts from './components/ListProducts/ListProducts';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import { Route, Routes } from 'react-router-dom';
 import PageListProducts from './pages/PageListProducts';
 import PageProduct from './pages/PageProduct';
+import Rating from './components/Rating/Rating';
 
 
 function App() {
-
   let [state, setState] = useState({
     products : [
                 {
@@ -18,7 +17,7 @@ function App() {
                     img: ["product5.webp", "product6.webp"],
                     price: 1000,
                     old_price: 1100,
-                    reviews: {count: 123, average_value:4},
+                    reviews: {count: 123, average_value:4, my_value: null},
                     maxCount: 100,
                     characteristics: [
                       {id: 1, value: "зеленый", name: "Color"},
@@ -31,7 +30,7 @@ function App() {
                     img: ["product5.webp", "product6.webp"],
                     price: 2000,
                     old_price: null,
-                    reviews: {count: 100, average_value:3},
+                    reviews: {count: 100, average_value:3.1, my_value: 5},
                     maxCount: 100,
                     characteristics: [
                       {id: 1, value: "зеленый", name: "Color"},
@@ -44,7 +43,7 @@ function App() {
                     img: ["product5.webp", "product6.webp"],
                     price: 3000,
                     old_price: 3400,
-                    reviews: {count: 999, average_value:5},
+                    reviews: {count: 999, average_value:5, my_value: 3},
                     maxCount: 100,
                     characteristics: [
                       {id: 1, value: "зеленый", name: "Color"},
@@ -84,6 +83,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <Routes>
 
         <Route
@@ -94,9 +94,11 @@ function App() {
           path="page/:id"
           element={<PageProduct />}
         />
-
+        <Route
+          path="rat"
+          element={<Rating />}
+        />
       </Routes>
-      
       
 
     </div>
