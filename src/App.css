@@ -5034,15 +5034,21 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   gap: .5rem
 }
 .rating__warp{
+  padding: 0px;
+}
+.rating__warp li{
   padding: 3px;
+  display: inline-block;
 }
 .rating__all{
   position: relative;
 }
-.rating__icon {
+.rating__icon{
   color: var(--secondary-color);
-  display: inline-block;
-  
+  border: none;
+  padding: 0;
+  background: transparent;
+  font-size: 1.8rem;
 }
 .rating__value{
   color: var(--secondary-color);
